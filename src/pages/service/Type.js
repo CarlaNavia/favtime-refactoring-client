@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import ServiceService from "../../lib/service-service";
 
@@ -32,7 +32,9 @@ export default function Type() {
         {services.map((eachService, index) => {
           return (
             <li>
-              <p>{eachService.title}</p>
+              <Link to={`/service/${eachService._id}`}>
+                {eachService.title}
+              </Link>
             </li>
           );
         })}
