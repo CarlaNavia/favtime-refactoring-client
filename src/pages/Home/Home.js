@@ -35,9 +35,14 @@ function Home({ user = {}, logout = () => {} }) {
           </button>
         </div>
       )}
+
       <ul>
         {types.map((eachType, index) => {
-          return <li>{eachType.title}</li>;
+          return (
+            <li>
+              <Link to={`/servicetype/${eachType._id}`}>{eachType.title}</Link>
+            </li>
+          );
         })}
       </ul>
       <ul>
