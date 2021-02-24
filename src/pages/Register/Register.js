@@ -21,7 +21,7 @@ const Register = ({ isLoggedIn = false, register = () => {} }) => {
   };
 
   useEffect(() => {
-    if (isLoggedIn) history.push("/");
+    if (isLoggedIn) history.push("/private");
   }, [isLoggedIn, history]);
 
   return (
