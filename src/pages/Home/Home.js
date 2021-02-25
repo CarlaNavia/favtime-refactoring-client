@@ -33,13 +33,27 @@ function Home({ user = {}, logout = () => {} }) {
           >
             LOGOUT
           </button>
+          <ul>
+        <li>
+          <Link to={`/bookings/${user._id}`}>MY BOOKINGS</Link>
+        </li>
+        <li>
+          <Link to={`/requests/${user._id}`}>MY REQUESTS</Link>
+        </li>
+        {/* <li>
+          <Link to={`/reviews/${user._id}`}>MY REVIEWS</Link>
+        </li> */}
+        {/* <li>
+          <Link to={`/services/${user._id}`}>MY SERVICES</Link>
+        </li> */}
+      </ul>
         </div>
       )}
-
+      
       <ul>
         {types.map((eachType, index) => {
           return (
-            <li>
+            <li key={index}>
               <Link to={`/servicetype/${eachType._id}`}>{eachType.title}</Link>
             </li>
           );

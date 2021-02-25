@@ -4,10 +4,12 @@ import PrivateRoute from "./components/PrivateRoute";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Home from "./pages/Home/Home";
-import ServiceCreate from "./pages/service/Create"
+import ServiceCreate from "./pages/service/Create";
 import ServiceType from "./pages/service/Type";
-import ServiceDetail from "./pages/service/Detail"
-import BookingCreate from "./pages/booking/Create"
+import ServiceDetail from "./pages/service/Detail";
+import BookingCreate from "./pages/booking/Create";
+import ProfileMyBookings from "./pages/profile/Bookings";
+import ProfileMyRequests from "./pages/profile/Requests";
 
 function App() {
   return (
@@ -17,20 +19,18 @@ function App() {
         <Route exact path="/register" component={Register} />
         <Route exact path="/" component={Home} />
         <Route exact path="/servicetype/:id" component={ServiceType} />
+        <PrivateRoute exact path="/service/create" component={ServiceCreate} />
+        <PrivateRoute exact path="/service/:id" component={ServiceDetail} />
+        <PrivateRoute exact path="/booking/:id" component={BookingCreate} />
         <PrivateRoute
           exact
-          path="/service/create"
-          component={ServiceCreate}
+          path="/bookings/:id"
+          component={ProfileMyBookings}
         />
-          <PrivateRoute
+        <PrivateRoute
           exact
-          path="/service/:id"
-          component={ServiceDetail}
-        />
-          <PrivateRoute
-          exact
-          path="/booking/:id"
-          component={BookingCreate}
+          path="/requests/:id"
+          component={ProfileMyRequests}
         />
         <PrivateRoute
           exact

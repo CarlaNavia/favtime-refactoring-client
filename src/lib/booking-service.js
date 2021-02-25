@@ -13,6 +13,12 @@ class BookingService {
       .post(`/api/booking/${id}`, newBooking)
       .then(({ data }) => data);
   }
+  async getMyRequests(ownerId) {
+    return this.axios.get(`/api/requests/${ownerId}`).then(({ data }) => data);
+  }
+  async getMyBookings(clientId) {
+    return this.axios.get(`/api/bookings/${clientId}`).then(({ data }) => data);
+  }
 }
 
 const axiosRequestFunctions = new BookingService();
