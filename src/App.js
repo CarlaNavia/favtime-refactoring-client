@@ -7,9 +7,10 @@ import Home from "./pages/Home/Home";
 import ServiceCreate from "./pages/service/Create";
 import ServiceType from "./pages/service/Type";
 import ServiceDetail from "./pages/service/Detail";
-import BookingCreate from "./pages/booking/Create";
-import ProfileMyBookings from "./pages/profile/Bookings";
-import ProfileMyRequests from "./pages/profile/Requests";
+import BookingCreate from "./pages/Booking/Create";
+import ProfileMyBookings from "./pages/Profile/Bookings";
+import ProfileMyRequests from "./pages/Profile/Requests";
+import ProfileMyServices from "./pages/Profile/Services";
 
 function App() {
   return (
@@ -31,6 +32,12 @@ function App() {
           exact
           path="/requests/:id"
           component={ProfileMyRequests}
+        />
+
+        <PrivateRoute
+          exact
+          path="/services/:id"
+          component={ProfileMyServices}
         />
         <PrivateRoute
           exact

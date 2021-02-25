@@ -25,6 +25,9 @@ class ServiceService {
   async getOneType(id) {
     return this.axios.get(`/api/servicetype/${id}`).then(({ data }) => data);
   }
+  async getMyServices(userId) {
+    return this.axios.get(`/api/services/${userId}`).then(({ data }) => data);
+  }
 }
 
 const axiosRequestFunctions = new ServiceService();

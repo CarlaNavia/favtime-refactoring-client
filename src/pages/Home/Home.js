@@ -43,9 +43,9 @@ function Home({ user = {}, logout = () => {} }) {
         {/* <li>
           <Link to={`/reviews/${user._id}`}>MY REVIEWS</Link>
         </li> */}
-        {/* <li>
+        <li>
           <Link to={`/services/${user._id}`}>MY SERVICES</Link>
-        </li> */}
+        </li>
       </ul>
         </div>
       )}
