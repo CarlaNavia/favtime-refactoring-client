@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import ServiceService from "../../lib/service-service";
-import { useParams } from "react-router-dom";
+import { useParams , Link} from "react-router-dom";
 
 export default function Detail() {
   const params = useParams();
@@ -23,6 +23,7 @@ export default function Detail() {
       <p>{service.description}</p>
       <p>{service.type && service.type.title}</p>
       <p>{service.availableTime}</p>
+      <Link to={`/booking/${service._id}`}>BOOK!</Link>
     </div>
   );
 }

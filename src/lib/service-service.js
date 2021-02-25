@@ -1,6 +1,6 @@
 import axios from "axios";
 
-class VideoService {
+class ServiceService {
   constructor() {
     this.axios = axios.create({
       baseURL: process.env.REACT_APP_API_URI,
@@ -27,6 +27,6 @@ class VideoService {
   }
 }
 
-const axiosRequestFunctions = new VideoService();
+const axiosRequestFunctions = new ServiceService();
 
 export default axiosRequestFunctions;

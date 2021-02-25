@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home";
 import ServiceCreate from "./pages/service/Create"
 import ServiceType from "./pages/service/Type";
 import ServiceDetail from "./pages/service/Detail"
+import BookingCreate from "./pages/booking/Create"
 
 function App() {
   return (
@@ -25,6 +26,11 @@ function App() {
           exact
           path="/service/:id"
           component={ServiceDetail}
+        />
+          <PrivateRoute
+          exact
+          path="/booking/:id"
+          component={BookingCreate}
         />
         <PrivateRoute
           exact
