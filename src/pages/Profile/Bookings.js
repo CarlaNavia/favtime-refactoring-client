@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import BookingService from "../../lib/booking-service";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 function Bookings() {
   const params = useParams();
   const [bookings, setBookings] = useState([]);
@@ -28,6 +28,10 @@ function Bookings() {
             <div key={index}>
               <h3>Service:{eachBooking.service.title}</h3>
               <p>Owner:{eachBooking.owner.firstName}</p>
+              <p>Status:{eachBooking.status}</p>
+              {eachBooking.status === "accepted" && (
+                <Link to={`/review/${eachBooking._id}`}>Add a review</Link>
+              )}
             </div>
           );
         })}

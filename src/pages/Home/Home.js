@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { withAuth } from "../../lib/AuthProvider";
 import { Link } from "react-router-dom";
-import ServiceService from "../../lib/service-service";
+import TypeService from "../../lib/type-service";
 
 function Home({ user = {}, logout = () => {} }) {
   const [types, setTypes] = useState([]);
 
   const getAllTypes = () => {
-    ServiceService.getAllTypes().then((result) => {
+    TypeService.getAllTypes().then((result) => {
       setTypes(result);
     });
   };
@@ -34,22 +34,22 @@ function Home({ user = {}, logout = () => {} }) {
             LOGOUT
           </button>
           <ul>
-        <li>
-          <Link to={`/bookings/${user._id}`}>MY BOOKINGS</Link>
-        </li>
-        <li>
-          <Link to={`/requests/${user._id}`}>MY REQUESTS</Link>
-        </li>
-        {/* <li>
-          <Link to={`/reviews/${user._id}`}>MY REVIEWS</Link>
-        </li> */}
-        <li>
-          <Link to={`/services/${user._id}`}>MY SERVICES</Link>
-        </li>
-      </ul>
+            <li>
+              <Link to={`/bookings/${user._id}`}>MY BOOKINGS</Link>
+            </li>
+            <li>
+              <Link to={`/requests/${user._id}`}>MY REQUESTS</Link>
+            </li>
+            <li>
+              <Link to={`/reviews/${user._id}`}>MY REVIEWS</Link>
+            </li>
+            <li>
+              <Link to={`/services/${user._id}`}>MY SERVICES</Link>
+            </li>
+          </ul>
         </div>
       )}
-      
+
       <ul>
         {types.map((eachType, index) => {
           return (

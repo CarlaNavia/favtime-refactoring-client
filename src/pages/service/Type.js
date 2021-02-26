@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import ServiceService from "../../lib/service-service";
+import TypeService from "../../lib/type-service";
 
 export default function Type() {
   const params = useParams();
@@ -8,7 +9,7 @@ export default function Type() {
   const [type, setType] = useState(null);
 
   const oneType = useCallback(() => {
-    ServiceService.getOneType(params.id).then((result) => {
+    TypeService.getOneType(params.id).then((result) => {
       setType(result);
     });
   }, [params.id]);

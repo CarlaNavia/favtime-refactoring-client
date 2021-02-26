@@ -8,9 +8,6 @@ class ServiceService {
     });
   }
 
-  async getAllTypes() {
-    return this.axios.get("/api/servicetype").then(({ data }) => data);
-  }
   async createAService(newService) {
     return this.axios.post("/api/service", newService).then(({ data }) => data);
   }
@@ -21,9 +18,6 @@ class ServiceService {
     return this.axios
       .get(`/api/servicetype/${id}/services`)
       .then(({ data }) => data);
-  }
-  async getOneType(id) {
-    return this.axios.get(`/api/servicetype/${id}`).then(({ data }) => data);
   }
   async getMyServices(userId) {
     return this.axios.get(`/api/services/${userId}`).then(({ data }) => data);

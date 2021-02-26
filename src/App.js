@@ -11,6 +11,8 @@ import BookingCreate from "./pages/Booking/Create";
 import ProfileMyBookings from "./pages/Profile/Bookings";
 import ProfileMyRequests from "./pages/Profile/Requests";
 import ProfileMyServices from "./pages/Profile/Services";
+import ProfileMyReviews from "./pages/Profile/Reviews";
+import ReviewCreate from "./pages/Review/Create";
 
 function App() {
   return (
@@ -39,6 +41,9 @@ function App() {
           path="/services/:id"
           component={ProfileMyServices}
         />
+
+        <PrivateRoute exact path="/reviews/:id" component={ProfileMyReviews} />
+        <PrivateRoute exact path="/review/:id" component={ReviewCreate} />
         <PrivateRoute
           exact
           path="/private"

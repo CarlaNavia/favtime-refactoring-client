@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import ServiceService from "../../lib/service-service";
 import { useHistory } from "react-router-dom";
+import TypeService from "../../lib/type-service";
 
 export default function Create() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [typeId, setTypeId] = useState('')
-  const [types, setTypes] = useState([])
+  const [typeId, setTypeId] = useState("");
+  const [types, setTypes] = useState([]);
   const [availableTime, setAvailableTime] = useState("");
   const [city, setCity] = useState("");
   const [address, setAddress] = useState("");
@@ -29,7 +30,7 @@ export default function Create() {
   };
 
   useEffect(() => {
-    ServiceService.getAllTypes().then((result) => {
+    TypeService.getAllTypes().then((result) => {
       setTypes(result);
     });
   }, []);
