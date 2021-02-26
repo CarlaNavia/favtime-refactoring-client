@@ -12,6 +12,13 @@ function Requests() {
     });
   };
 
+  const handleDelete = (event, id) => {
+    event.preventDefault()
+    ServiceService.removeOneService(id).then((result) => {
+      setServices(result);
+    });
+  };
+
   useEffect(() => {
     getMyServices();
   }, []);
@@ -29,6 +36,7 @@ function Requests() {
             <div key={index}>
               <h3>Service:{eachService.title}</h3>
               <p>Type:{eachService.type && eachService.type.title}</p>
+              <button onClick={(event) => handleDelete(event, eachService._id)}>DELETE</button>
             </div>
           );
         })}

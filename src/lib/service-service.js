@@ -22,6 +22,9 @@ class ServiceService {
   async getMyServices(userId) {
     return this.axios.get(`/api/services/${userId}`).then(({ data }) => data);
   }
+  async removeOneService(id) {
+    return this.axios.delete(`/api/service/${id}`).then(({ data }) => data);
+  }
 }
 
 const axiosRequestFunctions = new ServiceService();
