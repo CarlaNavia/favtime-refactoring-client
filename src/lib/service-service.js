@@ -25,6 +25,9 @@ class ServiceService {
   async removeOneService(id) {
     return this.axios.delete(`/api/service/${id}`).then(({ data }) => data);
   }
+  async editOneService(id, updatedService) {
+    return this.axios.put(`/api/service/${id}`, updatedService).then(({ data }) => data);
+  }
 }
 
 const axiosRequestFunctions = new ServiceService();

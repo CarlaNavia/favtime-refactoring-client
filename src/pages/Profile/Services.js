@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ServiceService from "../../lib/service-service";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 function Requests() {
   const params = useParams();
@@ -36,6 +36,7 @@ function Requests() {
             <div key={index}>
               <h3>Service:{eachService.title}</h3>
               <p>Type:{eachService.type && eachService.type.title}</p>
+              <Link to={`/service/${eachService._id}/edit`}>EDIT</Link>
               <button onClick={(event) => handleDelete(event, eachService._id)}>DELETE</button>
             </div>
           );
