@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-
 import { Link } from "react-router-dom";
 import TypeService from "../../lib/type-service";
 import Navbar from "../../components/common/Navbar/Navbar";
 import TypesList from "../../components/services/TypesList";
+import "./Home.css"
 
 function Home() {
   const [types, setTypes] = useState([]);
@@ -23,7 +23,7 @@ function Home() {
 
       <main>
         <article>
-          <h1>What are you looking for?</h1>
+          <h2 className="home-title">What are you looking for?</h2>
         </article>
         <article>
           <TypesList types={types} />
