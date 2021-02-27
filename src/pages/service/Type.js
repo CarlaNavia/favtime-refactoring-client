@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import ServiceService from "../../lib/service-service";
 import TypeService from "../../lib/type-service";

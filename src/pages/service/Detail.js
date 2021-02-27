@@ -3,7 +3,9 @@ import ServiceService from "../../lib/service-service";
 import { useParams } from "react-router-dom";
 import Navbar from "../../components/common/Navbar/Navbar";
 import BookingCreateFrom from "../../components/booking/CreateFrom";
-export default function Detail() {
+import { withAuth } from "../../lib/AuthProvider";
+
+function Detail({ user = {}}) {
   const params = useParams();
   const [service, setService] = useState("");
 
@@ -29,10 +31,15 @@ export default function Detail() {
           <p>{service.availableTime}</p>
         </article>
         <article>
-          <h2>Let's book this service!</h2>
-          <BookingCreateFrom />
+          {user._id !== service.owner && (
+            <div>
+              <h2>Let's book this service!</h2>
+              <BookingCreateFrom />
+            </div>
+          )}
         </article>
       </main>
     </div>
   );
 }
+export default withAuth(Detail)

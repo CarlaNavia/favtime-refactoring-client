@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import TypeService from "../../lib/type-service";
 import Navbar from "../../components/common/Navbar/Navbar";
 import TypesList from "../../components/services/TypesList";
-import "./Home.css"
+import "./Home.css";
 
 function Home() {
   const [types, setTypes] = useState([]);
@@ -24,13 +24,15 @@ function Home() {
       <main>
         <article>
           <h2 className="home-title">What are you looking for?</h2>
-        </article>
-        <article>
+
           <TypesList types={types} />
+          <div className="newservice-btn">
+            <Link className="btn-link" to="/service/create">
+              Add a service
+            </Link>
+          </div>
         </article>
       </main>
-
-      <Link to="/service/create">ADD SERVICE</Link>
     </div>
   );
 }

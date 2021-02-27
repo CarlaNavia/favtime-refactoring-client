@@ -24,7 +24,6 @@ function App() {
         <PrivateRoute exact path="/profile/:id" component={Profile} />
         <PrivateRoute exact path="/review/:id" component={ReviewCreate} />
         <PrivateRoute exact path="/service/:id/edit" component={ServiceEdit} />
-      
       </Switch>
     </AuthProvider>
   );

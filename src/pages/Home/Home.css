@@ -1,5 +1,27 @@
-.home-title{
-    margin-top:100px;
-    margin-bottom: 20px;
-    text-align: center;
+.home-title {
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: 100px;
+  text-align: center;
+}
+.newservice-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-link {
+  background-color: #e86e6c;
+  border-radius: 2rem;
+  color: #fff;
+  padding: .5rem 1rem;
+}
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: box-shadow ease-in-out 150ms, transform ease-in-out 150ms;
+  transition-delay: 50ms;
 }

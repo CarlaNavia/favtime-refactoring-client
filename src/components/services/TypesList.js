@@ -1,18 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Icon from "../services/Icon";
+import "./TypesList.css";
 
-export default function TypesList({types=[]}) {
+export default function TypesList({ types = [] }) {
   return (
-    <div>
-      <ul>
-        {types.map((eachType, index) => {
-          return (
-            <li key={index}>
-              <Link to={`/servicetype/${eachType._id}`}>{eachType.title}</Link>
-            </li>
-          );
-        })}
-      </ul>
+    <div className="wrapper">
+      {types.map((eachType, index) => {
+        return (
+          <div key={index} className="boxCategory">
+            <Link className="nameCategory" to={`/servicetype/${eachType._id}`}>
+              <Icon code={eachType.iconCode} />
+              <h6 className="h6Type">{eachType.title}</h6>
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
 }
