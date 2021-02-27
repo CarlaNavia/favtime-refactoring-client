@@ -2,6 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import ServiceService from "../../lib/service-service";
 import TypeService from "../../lib/type-service";
+import Navbar from "../../components/common/Navbar/Navbar";
+import ServiceList from "../../components/services/ServiceList";
 
 export default function Type() {
   const params = useParams();
@@ -27,19 +29,13 @@ export default function Type() {
 
   return (
     <div>
-      <h1>{type && type.title}</h1>
-      {services.length === 0 && <p>No hay resultados</p>}
-      <ul>
-        {services.map((eachService, index) => {
-          return (
-            <li>
-              <Link to={`/service/${eachService._id}`}>
-                {eachService.title}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <Navbar />
+      <main>
+        <article>
+          <h1>{type && type.title}</h1>
+          <ServiceList services={services} />
+        </article>
+      </main>
     </div>
   );
 }

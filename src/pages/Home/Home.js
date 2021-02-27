@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import { withAuth } from "../../lib/AuthProvider";
+
 import { Link } from "react-router-dom";
 import TypeService from "../../lib/type-service";
+import Navbar from "../../components/common/Navbar/Navbar";
+import TypesList from "../../components/services/TypesList";
 
-function Home({ user = {}, logout = () => {} }) {
+function Home() {
   const [types, setTypes] = useState([]);
 
   const getAllTypes = () => {
@@ -17,54 +19,19 @@ function Home({ user = {}, logout = () => {} }) {
 
   return (
     <div>
-      <h1>home</h1>
-      <ul>
-        <li>
-          <Link to="/login">LOGIN</Link>
-        </li>
-      </ul>
-      {user && (
-        <div>
-          <button
-            onClick={() => {
-              logout();
-            }}
-            className="logout-btn"
-          >
-            LOGOUT
-          </button>
-          <ul>
-            <li>
-              <Link to={`/bookings/${user._id}`}>MY BOOKINGS</Link>
-            </li>
-            <li>
-              <Link to={`/requests/${user._id}`}>MY REQUESTS</Link>
-            </li>
-            <li>
-              <Link to={`/reviews/${user._id}`}>MY REVIEWS</Link>
-            </li>
-            <li>
-              <Link to={`/services/${user._id}`}>MY SERVICES</Link>
-            </li>
-          </ul>
-        </div>
-      )}
+      <Navbar />
 
-      <ul>
-        {types.map((eachType, index) => {
-          return (
-            <li key={index}>
-              <Link to={`/servicetype/${eachType._id}`}>{eachType.title}</Link>
-            </li>
-          );
-        })}
-      </ul>
-      <ul>
-        <li>
-          <Link to="/service/create">ADD SERVICE</Link>
-        </li>
-      </ul>
+      <main>
+        <article>
+          <h1>What are you looking for?</h1>
+        </article>
+        <article>
+          <TypesList types={types} />
+        </article>
+      </main>
+
+      <Link to="/service/create">ADD SERVICE</Link>
     </div>
   );
 }
-export default withAuth(Home);
+export default Home;

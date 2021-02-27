@@ -10,7 +10,7 @@ const Login = ({ isLoggedIn = false, login = () => {} }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    login({email, password});
+    login({ email, password });
   };
 
   const handleInputChange = (event, setter) => {
@@ -19,7 +19,7 @@ const Login = ({ isLoggedIn = false, login = () => {} }) => {
   };
 
   useEffect(() => {
-    if (isLoggedIn) history.push("/private");
+    if (isLoggedIn) history.push("/");
   }, [isLoggedIn, history]);
 
   return (
@@ -54,6 +54,6 @@ const Login = ({ isLoggedIn = false, login = () => {} }) => {
 export default withAuth(Login);
 
 Login.propTypes = {
-    isLoggedIn: PropTypes.bool,
-    login: PropTypes.func.isRequired
-  }
+  isLoggedIn: PropTypes.bool,
+  login: PropTypes.func.isRequired,
+};

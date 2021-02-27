@@ -24,7 +24,7 @@ export default function Create() {
       city,
       address,
       credits,
-    }).then((result) => {
+    }).then(() => {
       history.push("/");
     });
   };

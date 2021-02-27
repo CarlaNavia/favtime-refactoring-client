@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ServiceService from "../../lib/service-service";
 import { useParams, Link } from "react-router-dom";
+import ServiceList from "../services/ServiceList";
 
 function Requests() {
   const params = useParams();
@@ -27,9 +28,7 @@ function Requests() {
     <div>
       <h1>My services:</h1>
 
-      {services.length === 0 &&
-        "Unfortunately you have not upload any service yet."}
-
+     <ServiceList services={services} onServiceDeleteClick={handleDelete} isOwner/>
       {services.length > 0 &&
         services.map((eachService, index) => {
           return (
