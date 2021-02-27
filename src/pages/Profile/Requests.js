@@ -12,6 +12,12 @@ function Requests() {
     });
   };
 
+  const handleClick = (bookingId, status) => {
+    BookingService.updateBookingStatus(bookingId, status).then((result) => {
+      setRequests(result);
+    });
+  };
+
   useEffect(() => {
     getMyRequests();
   }, []);
@@ -29,6 +35,20 @@ function Requests() {
             <div key={index}>
               <h3>Service:{eachRequest.service.title}</h3>
               <p>Client:{eachRequest.client.firstName}</p>
+              {eachRequest.status === "pending" && (
+                <div>
+                  <button
+                    onClick={() => handleClick(eachRequest._id, "accepted")}
+                  >
+                    Accept
+                  </button>
+                  <button
+                    onClick={() => handleClick(eachRequest._id, "declined")}
+                  >
+                    Declined
+                  </button>
+                </div>
+              )}
             </div>
           );
         })}

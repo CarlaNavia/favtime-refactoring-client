@@ -19,6 +19,11 @@ class BookingService {
   async getMyBookings(clientId) {
     return this.axios.get(`/api/bookings/${clientId}`).then(({ data }) => data);
   }
+  async updateBookingStatus(bookingId, status) {
+    return this.axios
+      .put(`/api/booking/${bookingId}/${status}`)
+      .then(({ data }) => data);
+  }
 }
 
 const axiosRequestFunctions = new BookingService();
