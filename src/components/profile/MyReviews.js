@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ReviewService from "../../lib/review-service";
 import { useParams } from "react-router-dom";
+import "./Profile.css"
 
 export default function Reviews() {
   const params = useParams();
@@ -18,7 +19,7 @@ export default function Reviews() {
 
   return (
     <div>
-      <h1>My reviews:</h1>
+      <h2 className="profile-title">MY REVIEWS:</h2>
 
       {reviews.length === 0 &&
         "Unfortunately you have not received any reviewed yet."}

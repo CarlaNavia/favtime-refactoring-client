@@ -4,21 +4,31 @@ import MyBookings from "../../components/profile/MyBookings";
 import MyRequests from "../../components/profile/MyRequests";
 import MyReviews from "../../components/profile/MyReviews";
 import MyServices from "../../components/profile/MyServices";
-import Navbar from "../../components/common/Navbar/Navbar"
+import Navbar from "../../components/common/Navbar/Navbar";
+import "./Profile.css";
+import "react-tabs/style/react-tabs.css";
 
 export default function Profile() {
   return (
     <div>
       <Navbar />
-      {/* <HeaderProfile history={props.history} user={props.user} /> */}
-
-      <div>
+      <h2 className="myprofile-title">MY PROFILE</h2>
+      <div className="container">
         <Tabs>
           <TabList>
-            <Tab>My bookings</Tab>
-            <Tab>My requests</Tab>
-            <Tab>My reviews</Tab>
-            <Tab>My services</Tab>
+            <Tab>
+              <img src="../../../booking.png" alt="booking" className="icon" />
+            </Tab>
+            <Tab>
+              <img src="../../../request.png" alt="request" className="icon" />
+            </Tab>
+            <Tab>
+              {" "}
+              <img src="../../../review.png" alt="review" className="icon" />
+            </Tab>
+            <Tab>
+              <img src="../../../services.png" alt="service" className="icon" />
+            </Tab>
           </TabList>
           <TabPanel>
             <MyBookings />

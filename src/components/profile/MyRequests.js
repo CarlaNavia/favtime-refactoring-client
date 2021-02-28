@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import BookingService from "../../lib/booking-service";
 import { useParams } from "react-router-dom";
+import "./Profile.css";
 
 function Requests() {
   const params = useParams();
@@ -24,7 +25,7 @@ function Requests() {
 
   return (
     <div>
-      <h1>My requests:</h1>
+      <h2 className="profile-title">MY REQUESTS:</h2>
 
       {requests.length === 0 &&
         "Unfortunately you have not received any request yet."}
@@ -32,9 +33,11 @@ function Requests() {
       {requests.length > 0 &&
         requests.map((eachRequest, index) => {
           return (
-            <div key={index}>
-              <h3>Service:{eachRequest.service.title}</h3>
-              <p>Client:{eachRequest.client.firstName}</p>
+            <div key={index} className="columns is-mobile border">
+              Service:{eachRequest.service.title} <br/>
+              Date: {eachRequest.date}<br/>
+              Time: {eachRequest.time}<br/>
+              Client:{eachRequest.client.firstName}<br/>
               {eachRequest.status === "pending" && (
                 <div>
                   <button

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import BookingService from "../../lib/booking-service";
 import { useParams, Link } from "react-router-dom";
+import "./Profile.css"
+
 function Bookings() {
   const params = useParams();
   const [bookings, setBookings] = useState([]);
@@ -17,7 +19,7 @@ function Bookings() {
 
   return (
     <div>
-      <h1>My bookings:</h1>
+      <h2 className="profile-title">MY BOOKINGS:</h2>
 
       {bookings.length === 0 &&
         "Unfortunately you have not booked any service yet."}

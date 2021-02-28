@@ -1,0 +1,16 @@
+.icon {
+  height: 50px;
+  width: 50px;
+}
+
+.header {
+  padding-top: 100px;
+}
+
+.myprofile-title {
+    color: rgb(232, 110, 108);
+    font-size: 20px;
+    margin: 60px;
+    text-align: center;
+    text-decoration: underline;
+  }
