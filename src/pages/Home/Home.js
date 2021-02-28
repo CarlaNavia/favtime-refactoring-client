@@ -22,7 +22,7 @@ function Home() {
       <Navbar />
 
       <main>
-        <article>
+        <article className="home-page">
           <h2 className="home-title">What are you looking for?</h2>
 
           <TypesList types={types} />

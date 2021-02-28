@@ -14,7 +14,7 @@
   background-color: #e86e6c;
   border-radius: 2rem;
   color: #fff;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 .btn-link:hover,
 .btn-link:focus,
@@ -24,4 +24,8 @@
   transform: scale(1.1);
   transition: box-shadow ease-in-out 150ms, transform ease-in-out 150ms;
   transition-delay: 50ms;
+}
+
+.home-page {
+  margin-top: 200px;
 }

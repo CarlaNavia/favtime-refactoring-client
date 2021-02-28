@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { withAuth } from "../../lib/AuthProvider";
 import PropTypes from "prop-types";
+import Navbar from "../../components/common/Navbar/Navbar";
+import "./Login.css";
 
 const Login = ({ isLoggedIn = false, login = () => {} }) => {
   const [email, setEmail] = useState("");
@@ -24,29 +26,36 @@ const Login = ({ isLoggedIn = false, login = () => {} }) => {
 
   return (
     <>
-      <h1>LOGIN:</h1>
+      <Navbar />
+      <div className="login-page">
+        <h1 className="login-title">LOGIN:</h1>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          placeholder="E-mail"
-          onChange={(e) => handleInputChange(e, setEmail)}
-        />
+        <form onSubmit={handleSubmit} className="login-form">
+          <input
+            type="email"
+            name="email"
+            className="input-form"
+            value={email}
+            placeholder="E-mail"
+            onChange={(e) => handleInputChange(e, setEmail)}
+          />
+          <br />
+          <input
+            type="password"
+            name="password"
+            className="input-form"
+            value={password}
+            placeholder="Password"
+            onChange={(e) => handleInputChange(e, setPassword)}
+          />
+          <br />
+          <input type="submit" value="Login" className="login-form-button" />
+        </form>
 
-        <input
-          type="password"
-          name="password"
-          value={password}
-          placeholder="Password"
-          onChange={(e) => handleInputChange(e, setPassword)}
-        />
-
-        <input type="submit" value="Login" />
-      </form>
-
-      <Link to="/register">You don't have an account? Register!</Link>
+        <Link className="expl-title" to="/register">
+          You don't have an account? Register!
+        </Link>
+      </div>
     </>
   );
 };
