@@ -1,0 +1,15 @@
+.types-title {
+    color: rgb(232, 110, 108);
+    font-size: 20px;
+    margin-top: 60px;
+    margin-bottom:30px;
+    text-align: center;
+    text-decoration: underline;
+  }
+.service-more {
+    color:gray;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+}

@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import ServiceService from "../../lib/service-service";
 import { useHistory } from "react-router-dom";
 import TypeService from "../../lib/type-service";
+import "./Create.css";
+import Navbar from "../../components/common/Navbar/Navbar";
 
 export default function Create() {
   const [title, setTitle] = useState("");
@@ -36,93 +38,114 @@ export default function Create() {
   }, []);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="title"
-        value={title}
-        required
-        placeholder="Title"
-        onChange={(event) => {
-          setTitle(event.target.value);
-        }}
-      />
-      <input
-        type="text"
-        name="description"
-        value={description}
-        required
-        placeholder="Description"
-        onChange={(event) => {
-          setDescription(event.target.value);
-        }}
-      />
-      <select
-        name="type"
-        onChange={(event) => {
-          setTypeId(event.target.value);
-        }}
-      >
-        <option value="" selected disabled>
-          SELECT A TYPE...
-        </option>
-        {types.map((eachType, index) => {
-          return (
-            <option key={eachType._id} value={eachType._id}>
-              {eachType.title}
+    <>
+      <Navbar />
+      <div className="create-service-page">
+        <h1 className="create-service-title">ADD A NEW SERVICE:</h1>
+        <form onSubmit={handleSubmit} className="create-service-form">
+          <input
+            type="text"
+            name="title"
+            value={title}
+            className="input-form"
+            required
+            placeholder="Title"
+            onChange={(event) => {
+              setTitle(event.target.value);
+            }}
+          />
+          <br />
+          <input
+            type="text"
+            name="description"
+            value={description}
+            className="input-form"
+            required
+            placeholder="Description"
+            onChange={(event) => {
+              setDescription(event.target.value);
+            }}
+          />
+          <br />
+          <select
+            name="type"
+            className="input-form"
+            onChange={(event) => {
+              setTypeId(event.target.value);
+            }}
+          >
+            <option value="" selected disabled>
+              Select a type...
             </option>
-          );
-        })}
-      </select>
-      <select
-        type="text"
-        name="availableTime"
-        value={availableTime}
-        required
-        placeholder="Available time"
-        onChange={(event) => {
-          setAvailableTime(event.target.value);
-        }}
-      >
-        <option value="" selected disabled>
-          Available Time
-        </option>
-        <option value="morning">Morning</option>
-        <option value="afternoon">Afternoon</option>
-        <option value="night">Night</option>
-      </select>
-      <input
-        type="text"
-        name="city"
-        value={city}
-        required
-        placeholder="City"
-        onChange={(event) => {
-          setCity(event.target.value);
-        }}
-      />
-      <input
-        type="text"
-        name="address"
-        value={address}
-        required
-        placeholder="Address"
-        onChange={(event) => {
-          setAddress(event.target.value);
-        }}
-      />
-      <input
-        type="number"
-        name="credits"
-        value={credits}
-        required
-        placeholder="Credits"
-        onChange={(event) => {
-          setCredits(event.target.value);
-        }}
-      />
-
-      <button type="submit">NEW SERVICE</button>
-    </form>
+            {types.map((eachType, index) => {
+              return (
+                <option key={eachType._id} value={eachType._id}>
+                  {eachType.title}
+                </option>
+              );
+            })}
+          </select>
+          <br />
+          <select
+            type="text"
+            name="availableTime"
+            className="input-form"
+            value={availableTime}
+            required
+            placeholder="Available time"
+            onChange={(event) => {
+              setAvailableTime(event.target.value);
+            }}
+          >
+            <option value="" selected disabled>
+              Available Time
+            </option>
+            <option value="morning">Morning</option>
+            <option value="afternoon">Afternoon</option>
+            <option value="night">Night</option>
+          </select>
+          <br />
+          <input
+            type="text"
+            name="city"
+            className="input-form"
+            value={city}
+            required
+            placeholder="City"
+            onChange={(event) => {
+              setCity(event.target.value);
+            }}
+          />
+          <br />
+          <input
+            type="text"
+            name="address"
+            className="input-form"
+            value={address}
+            required
+            placeholder="Address"
+            onChange={(event) => {
+              setAddress(event.target.value);
+            }}
+          />
+          <br />
+          <input
+            type="number"
+            name="credits"
+            className="input-form"
+            value={credits}
+            required
+            placeholder="Credits"
+            onChange={(event) => {
+              setCredits(event.target.value);
+            }}
+          />
+          <br />
+          <button type="submit" className="create-service-form-button">
+            Save
+          </button>
+        </form>
+      </div>
+    </>
   );
 }

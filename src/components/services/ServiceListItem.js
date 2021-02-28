@@ -7,10 +7,13 @@ export default function ServiceListItem({
   isOwner = false,
 }) {
   return (
-    <div>
-      <Link to={`/service/${eachService._id}`}>
+    <div className="columns is-mobile border">
+      <Link className="service-more" to={`/service/${eachService._id}`}>
     
-        <h3>Service:{eachService.title}</h3>
+       Service:{eachService.title} <br/>
+       Credits: {eachService.credits}
+      
+
       </Link>
 
       {isOwner && (

@@ -4,6 +4,7 @@ import ServiceService from "../../lib/service-service";
 import TypeService from "../../lib/type-service";
 import Navbar from "../../components/common/Navbar/Navbar";
 import ServiceList from "../../components/services/ServiceList";
+import "./Types.css"
 
 export default function Type() {
   const params = useParams();
@@ -32,7 +33,7 @@ export default function Type() {
       <Navbar />
       <main>
         <article>
-          <h1>{type && type.title}</h1>
+          <h3 className="types-title">{type && type.title}</h3>
           <ServiceList services={services} />
         </article>
       </main>
