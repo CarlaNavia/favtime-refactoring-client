@@ -1,0 +1,33 @@
+.create-form-page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-form {
+  border: 1px solid #e86e6c;
+  padding: 10px;
+}
+
+.create-form-button {
+  background-color: #e86e6c;
+  border-radius: 2rem;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.create-form-button:hover,
+.create-form-button:focus,
+.create-form-button:active {
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: box-shadow ease-in-out 150ms, transform ease-in-out 150ms;
+  transition-delay: 50ms;
+}

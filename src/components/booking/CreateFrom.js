@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import BookingService from "../../lib/booking-service";
+import "./CreateForm.css"
 
 export default function Create() {
   const params = useParams();
@@ -23,10 +24,12 @@ export default function Create() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="create-form-page">
+    <form onSubmit={handleSubmit} className="create-form">
       <input
         type="date"
         name="date"
+        className="input-form"
         value={date}
         required
         placeholder="Date"
@@ -34,9 +37,11 @@ export default function Create() {
           setDate(event.target.value);
         }}
       />
+      <br />
       <input
         type="text"
         name="time"
+        className="input-form"
         value={time}
         required
         placeholder="Time"
@@ -44,10 +49,11 @@ export default function Create() {
           setTime(event.target.value);
         }}
       />
-
+      <br />
       <input
         type="text"
         name="comments"
+        className="input-form"
         value={comments}
         required
         placeholder="Comments"
@@ -55,8 +61,9 @@ export default function Create() {
           setComments(event.target.value);
         }}
       />
-
-      <button type="submit">CONFIRM</button>
+      <br />
+      <input type="submit" value="CONFIRM" className="create-form-button" />
     </form>
+    </div>
   );
 }
