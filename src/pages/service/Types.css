@@ -1,15 +1,74 @@
 .types-title {
-    color: rgb(232, 110, 108);
-    font-size: 20px;
-    margin-top: 60px;
-    margin-bottom:30px;
-    text-align: center;
-    text-decoration: underline;
-  }
-.service-more {
-    color:gray;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none;
+  color: rgb(232, 110, 108);
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.serviceTypeName {
+  align-items: center;
+  display: flex;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.serviceTypeName > img {
+  width: 200px;
+}
+
+.iconTitle > img {
+  background-color: rgb(232, 110, 108);
+  border-radius: 1rem;
+  padding: 10px;
+  width: 100px;
+}
+
+.iconTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons_profile {
+  background-color: white;
+  border-radius: 2rem;
+  border: 2px solid rgb(232, 110, 108);
+  color: rgb(232, 110, 108);
+  font-size: 13px;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+.service-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons_profile:hover {
+  background-color: rgba(232, 110, 108, 0.6);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.description {
+  color: gray;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.border {
+  border: 1px solid rgb(241, 241, 241);
+  margin-top: 5px;
+  padding: 10px;
 }
