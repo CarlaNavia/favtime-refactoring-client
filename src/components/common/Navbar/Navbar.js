@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { withAuth } from "../../../lib/AuthProvider";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSignOutAlt,
   faSignInAlt,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { withAuth } from "../../../lib/AuthProvider";
 import "./Navbar.css";
 
 function Navbar({ user = {}, logout = () => {} }) {
@@ -62,4 +63,10 @@ function Navbar({ user = {}, logout = () => {} }) {
     </nav>
   );
 }
+
+Navbar.propTypes = {
+  logout: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
+};
+
 export default withAuth(Navbar);

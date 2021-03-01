@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Icon from "../services/Icon";
+import PropTypes from "prop-types";
 import "./TypesList.css";
 
 export default function TypesList({ types = [] }) {
@@ -19,3 +20,7 @@ export default function TypesList({ types = [] }) {
     </div>
   );
 }
+
+TypesList.prototype = {
+  types: PropTypes.array,
+};

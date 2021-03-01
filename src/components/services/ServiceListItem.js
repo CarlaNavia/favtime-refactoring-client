@@ -1,19 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export default function ServiceListItem({
-  eachService,
+  eachService = null,
   onServiceDeleteClick = () => {},
   isOwner = false,
 }) {
   return (
     <div className="columns is-mobile border">
       <Link className="service-more" to={`/service/${eachService._id}`}>
-    
-       Service:{eachService.title} <br/>
-       Credits: {eachService.credits}
-      
-
+        Service:{eachService.title} <br />
+        Credits: {eachService.credits}
       </Link>
 
       {isOwner && (
@@ -30,3 +28,9 @@ export default function ServiceListItem({
     </div>
   );
 }
+
+ServiceListItem.prototype = {
+  eachService: PropTypes.object,
+  onServiceDeleteClick: PropTypes.func,
+  isOwner: PropTypes.bool,
+};

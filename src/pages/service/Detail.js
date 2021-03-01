@@ -4,8 +4,9 @@ import { useParams } from "react-router-dom";
 import Navbar from "../../components/common/Navbar/Navbar";
 import BookingCreateFrom from "../../components/booking/CreateFrom";
 import { withAuth } from "../../lib/AuthProvider";
+import PropTypes from "prop-types";
 
-function Detail({ user = {}}) {
+function Detail({ user = {} }) {
   const params = useParams();
   const [service, setService] = useState("");
 
@@ -42,4 +43,8 @@ function Detail({ user = {}}) {
     </div>
   );
 }
-export default withAuth(Detail)
+Detail.propTypes = {
+  user: PropTypes.object,
+};
+
+export default withAuth(Detail);

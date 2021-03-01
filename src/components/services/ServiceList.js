@@ -1,5 +1,6 @@
 import React from "react";
 import ServiceListItem from "./ServiceListItem";
+import PropTypes from "prop-types";
 
 export default function ServiceList({
   services = [],
@@ -23,3 +24,9 @@ export default function ServiceList({
     </div>
   );
 }
+
+ServiceList.prototype = {
+  services: PropTypes.array,
+  onServiceDeleteClick: PropTypes.func,
+  isOwner: PropTypes.bool,
+};
