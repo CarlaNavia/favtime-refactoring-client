@@ -7,6 +7,7 @@ import MyServices from "../../components/profile/MyServices";
 import Navbar from "../../components/common/Navbar/Navbar";
 import { withAuth } from "../../lib/AuthProvider";
 import "./Profile.css";
+import PropTypes from "prop-types";
 import "react-tabs/style/react-tabs.css";
 
 function Profile({ user = null }) {
@@ -54,3 +55,7 @@ function Profile({ user = null }) {
   );
 }
 export default withAuth(Profile);
+
+Profile.propTypes = {
+  user: PropTypes.object,
+};
