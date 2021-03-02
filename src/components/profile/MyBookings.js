@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import BookingService from "../../lib/booking-service";
 import { useParams, Link } from "react-router-dom";
-import "./Profile.css"
+import "./Profile.css";
 
 function Bookings() {
   const params = useParams();
@@ -27,12 +27,26 @@ function Bookings() {
       {bookings.length > 0 &&
         bookings.map((eachBooking, index) => {
           return (
-            <div key={index}>
-              <h3>Service:{eachBooking.service.title}</h3>
-              <p>Owner:{eachBooking.owner.firstName}</p>
-              <p>Status:{eachBooking.status}</p>
+            <div key={index} className="columns is-mobile border bookings">
+              <p>
+                <span className="bold">Service: </span>
+                {eachBooking.service.title}
+              </p>
+              <p>
+                <span className="bold">Owner: </span>
+                {eachBooking.owner.firstName}
+              </p>
+              <p>
+                <span className="bold">Status: </span>
+                {eachBooking.status}
+              </p>
               {eachBooking.status === "accepted" && (
-                <Link to={`/review/${eachBooking._id}`}>Add a review</Link>
+                <Link
+                  className="buttons_profile "
+                  to={`/review/${eachBooking._id}`}
+                >
+                  Add a review
+                </Link>
               )}
             </div>
           );

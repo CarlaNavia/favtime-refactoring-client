@@ -34,18 +34,27 @@ function Requests() {
         requests.map((eachRequest, index) => {
           return (
             <div key={index} className="columns is-mobile border">
-              Service:{eachRequest.service.title} <br/>
-              Date: {eachRequest.date}<br/>
-              Time: {eachRequest.time}<br/>
-              Client:{eachRequest.client.firstName}<br/>
+              <span className="bold">Service: </span>
+              {eachRequest.service.title} <br />
+              <span className="bold"> Date: </span>
+              {eachRequest.date}
+              <br />
+              <span className="bold">Time: </span>
+              {eachRequest.time}
+              <br />
+              <span className="bold">Client: </span>
+              {eachRequest.client.firstName}
+              <br />
               {eachRequest.status === "pending" && (
                 <div>
                   <button
+                    className="buttons_profile "
                     onClick={() => handleClick(eachRequest._id, "accepted")}
                   >
                     Accept
                   </button>
                   <button
+                    className="buttons_profile "
                     onClick={() => handleClick(eachRequest._id, "declined")}
                   >
                     Declined

@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import ServiceService from "../../lib/service-service";
 import TypeService from "../../lib/type-service";
 import Navbar from "../../components/common/Navbar/Navbar";
+import "./Create.css";
 
 export default function Edit() {
   const params = useParams();
@@ -57,12 +58,13 @@ export default function Edit() {
     <div>
       <Navbar />
       <main>
-        <article>
-        <h2>Edit service</h2>
-          <form onSubmit={handleSubmit}>
+        <article className="create-service-page">
+          <h2 className="create-service-title">Edit service</h2>
+          <form onSubmit={handleSubmit} className="create-service-form">
             <input
               type="text"
               name="title"
+              className="input-form"
               value={title}
               required
               placeholder="Title"
@@ -70,9 +72,11 @@ export default function Edit() {
                 setTitle(event.target.value);
               }}
             />
+            <br />
             <input
               type="text"
               name="description"
+              className="input-form"
               value={description}
               required
               placeholder="Description"
@@ -80,15 +84,18 @@ export default function Edit() {
                 setDescription(event.target.value);
               }}
             />
+            <br />
             <select
               name="type"
+              className="input-form"
               value={typeId}
               onChange={(event) => {
                 setTypeId(event.target.value);
               }}
             >
+              <br />
               <option value="" selected disabled>
-                SELECT A TYPE...
+                Select a type...
               </option>
               {types.map((eachType, index) => {
                 return (
@@ -98,10 +105,12 @@ export default function Edit() {
                 );
               })}
             </select>
+            <br />
             <select
               type="text"
               name="availableTime"
               value={availableTime}
+              className="input-form"
               required
               placeholder="Available time"
               onChange={(event) => {
@@ -115,38 +124,46 @@ export default function Edit() {
               <option value="afternoon">Afternoon</option>
               <option value="night">Night</option>
             </select>
+            <br />
             <input
               type="text"
               name="city"
               value={city}
+              className="input-form"
               required
               placeholder="City"
               onChange={(event) => {
                 setCity(event.target.value);
               }}
             />
+            <br />
             <input
               type="text"
               name="address"
               value={address}
+              className="input-form"
               required
               placeholder="Address"
               onChange={(event) => {
                 setAddress(event.target.value);
               }}
             />
+            <br />
             <input
               type="number"
               name="credits"
               value={credits}
+              className="input-form"
               required
               placeholder="Credits"
               onChange={(event) => {
                 setCredits(event.target.value);
               }}
             />
-
-            <button type="submit">UPDATED SERVICE</button>
+            <br />
+            <button className="create-service-form-button" type="submit">
+              Updated service
+            </button>
           </form>
         </article>
       </main>

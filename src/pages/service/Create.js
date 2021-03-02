@@ -41,7 +41,7 @@ export default function Create() {
     <>
       <Navbar />
       <div className="create-service-page">
-        <h1 className="create-service-title">ADD A NEW SERVICE:</h1>
+        <h2 className="create-service-title">ADD A NEW SERVICE:</h2>
         <form onSubmit={handleSubmit} className="create-service-form">
           <input
             type="text"

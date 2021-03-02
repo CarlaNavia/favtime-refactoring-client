@@ -5,14 +5,20 @@ import MyRequests from "../../components/profile/MyRequests";
 import MyReviews from "../../components/profile/MyReviews";
 import MyServices from "../../components/profile/MyServices";
 import Navbar from "../../components/common/Navbar/Navbar";
+import { withAuth } from "../../lib/AuthProvider";
 import "./Profile.css";
 import "react-tabs/style/react-tabs.css";
 
-export default function Profile() {
+function Profile({ user = null }) {
   return (
     <div>
       <Navbar />
       <h2 className="myprofile-title">MY PROFILE</h2>
+      <div className="user-details">
+        <p className="bold">{user && user.firstName}</p>
+        <p className="bold">{user && user.credits} credits</p>
+      </div>
+
       <div className="container">
         <Tabs>
           <TabList>
@@ -47,3 +53,4 @@ export default function Profile() {
     </div>
   );
 }
+export default withAuth(Profile);

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ReviewService from "../../lib/review-service";
 import { useParams } from "react-router-dom";
-import "./Profile.css"
+import "./Profile.css";
 
 export default function Reviews() {
   const params = useParams();
@@ -27,10 +27,19 @@ export default function Reviews() {
       {reviews.length > 0 &&
         reviews.map((eachReview, index) => {
           return (
-            <div key={index}>
-              <h3>Author:{eachReview.author.firstName}</h3>
-              <p>Review:{eachReview.review}</p>
-              <p>Rating:{eachReview.rating}</p>
+            <div key={index} className="columns is-mobile border">
+              <p>
+                <span className="bold">Review: </span>
+                {eachReview.review}
+              </p>
+              <p>
+                <span className="bold">Rating: </span>
+                {eachReview.rating}/5
+              </p>
+              <p>
+                <span className="bold">Author: </span>
+                {eachReview.author.firstName}
+              </p>
             </div>
           );
         })}

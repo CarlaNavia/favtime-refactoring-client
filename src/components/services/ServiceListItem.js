@@ -9,28 +9,34 @@ export default function ServiceListItem({
 }) {
   return (
     <div className="columns is-mobile border service-row">
-     <div className="column">
-          <p className="name">{eachService.title}</p>
-        </div>
-        <div className="column is-two-fifths-desktop">
-          <p className="description">{eachService.description}</p>
-          <p className="description">{eachService.credits} credits</p>
-        </div>
-      <Link className="buttons_profile" to={`/service/${eachService._id}`}>
- 
-     More
-      </Link>
+      <div className="column">
+        <p className="name">{eachService.title}</p>
+      </div>
+      <div className="column is-two-fifths-desktop">
+        <p className="description">{eachService.description}</p>
+        <p className="description">{eachService.credits} credits</p>
+      </div>
 
       {isOwner && (
         <div>
-          <p>Type:{eachService.type && eachService.type.title}</p>
-          <Link to={`/service/${eachService._id}/edit`}>EDIT</Link>
+          <Link
+            className="buttons_profile "
+            to={`/service/${eachService._id}/edit`}
+          >
+            EDIT
+          </Link>
           <button
+            className="buttons_profile "
             onClick={(event) => onServiceDeleteClick(event, eachService._id)}
           >
             DELETE
           </button>
         </div>
+      )}
+      {!isOwner && (
+        <Link className="buttons_profile" to={`/service/${eachService._id}`}>
+          More
+        </Link>
       )}
     </div>
   );

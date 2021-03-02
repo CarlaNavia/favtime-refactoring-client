@@ -8,9 +8,42 @@
 }
 
 .myprofile-title {
-    color: rgb(232, 110, 108);
-    font-size: 20px;
-    margin: 60px;
-    text-align: center;
-    text-decoration: underline;
-  }
+  color: rgb(232, 110, 108);
+  font-size: 20px;
+  margin: 60px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.buttons_profile {
+  background-color: white;
+  border-radius: 2rem;
+  border: 2px solid rgb(232, 110, 108);
+  color: rgb(232, 110, 108);
+  font-size: 13px;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+}
+.buttons_profile:hover {
+  background-color: rgba(232, 110, 108, 0.6);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.bookings {
+  display: flex;
+}
+
+.user-details {
+  align-items: flex-end;
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  margin-right: 20px;
+}
